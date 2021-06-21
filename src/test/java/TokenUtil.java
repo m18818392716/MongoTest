@@ -35,7 +35,10 @@ public class TokenUtil {
     public static String formatUrlMap(Map<String, String> paraMap, boolean urlEncode, boolean keyToLower)
     {
         String buff = "";
-        Map<String, String> tmpMap = paraMap;
+//        Map<String, String> tmpMap = paraMap;
+
+        Map tmpMap = new HashMap();
+        tmpMap = paraMap;
         try
         {
             List<Map.Entry<String, String>> infoIds = new ArrayList<Map.Entry<String, String>>(tmpMap.entrySet());
@@ -96,14 +99,36 @@ public class TokenUtil {
     public static void main(String[] args) {
         // TODO Auto-generated method stub
         //字典序列排序
-        Map<String,String> paraMap = new HashMap<String,String>();
+//        Map<String,String> paraMap = new HashMap<String,String>();
+
+        Map paraMap = new HashMap();
 //        paraMap.put("total_fee","200");
 //        paraMap.put("appid", "wxd678efh567hg6787");
 //        paraMap.put("body", "腾讯充值中心-QQ会员充值");
 //        paraMap.put("out_trade_no","20150806125346");
-        paraMap.put("user_name","18054290040");
-        paraMap.put("pwd", "707b68e814b355091e9b49c4de3856d0");
-        paraMap.put("area_code", "86");
+//        paraMap.put("user_name","18054290040");
+//        paraMap.put("pwd", "707b68e814b355091e9b49c4de3856d0");
+//        paraMap.put("area_code", "86");
+
+//        paraMap.put("user_name","18054290040");
+//        paraMap.put("pwd", "707b68e814b355091e9b49c4de3856d0");
+//        paraMap.put("area_code", "86");
+
+//        paraMap.put("newsType","1");
+//        paraMap.put("objectId", "9448423");
+//        paraMap.put("readNews", "15");
+//        paraMap.put("readTime", "15");
+
+//        paraMap.put("pwd","1");
+//        paraMap.put("withdrawType", "9448423");
+//        paraMap.put("withdrawMenuId", "15");
+//        paraMap.put("applyCashAmount", "15");
+//        paraMap.put("withdrawAccount", "15");
+
+        paraMap.put("accountType","1");
+        paraMap.put("accountNum", "9448423");
+        paraMap.put("ownerName", "15");
+
         String url = formatUrlMap(paraMap, false, false);
         System.out.println(url);
     }
